@@ -50,32 +50,32 @@ import qs from "qs";
 //     ],
 // }
 export const ProductService = {
-  GetProducts: (Name ='') => {
+  GetProducts: (name ='') => {
     // slice برای اینکه یک کپی  از ابجکت را ارسال کند و برای امنیت است
     // return data.Products.slice();
     return axios
-      .get("https://localhost:44333/api/ProductsAPI/GetProducts" + Name)
+      .get("https://localhost:44332/GetProducts" + name)
       .catch((error) => console.log(error));
   },
-  GetProductById: (Id) => {
+  GetProductById: (id) => {
     //return data.Products.find(item => item.Id.toString() ===Id.toString());
     return axios
-      .get("https://localhost:44333/api/ProductsAPI/GetProduct/" + Id)
+      .get("https://localhost:44332/GetProductById/?id=" + id)
       .catch((error) => console.log(error));
   },
   GetComments: (Id) => {
     return axios
-      .get("https://localhost:44333/api/CommentsAPI/GetCommentsProduct/" + Id)
+      .get("https://localhost:44332/GetCommentsProduct/?id=" + Id)
       .catch((error) => console.log(error));
   },
   PostComment: (Comment) => {
-    const url = "https://localhost:44333/api/CommentsAPI/PostComment";
-    const options = {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      data: qs.stringify(Comment),
-      url: url,
-    };
-    axios(options);
+    // const options = {
+    //   method: "POST",
+    //   headers: { "content-type": "application/x-www-form-urlencoded" },
+    //   data: qs.stringify(Comment),
+    //   url: "https://localhost:44332/PostComment",
+    // };
+    // axios(options).catch((error) => console.log(error));
+    axios.post('https://localhost:44332/PostComment' , Comment)
   },
 };

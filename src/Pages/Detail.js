@@ -70,15 +70,15 @@ export class Details extends React.Component {
         <div className="row mt-5">
           <div className="col-md-5">
             <img
-              alt={Product.Name}
-              src={"https://localhost:44333/MyPictures/" + Product.ImageProduct}
+              alt={Product.name}
+              src={"https://localhost:44333/MyPictures/" + Product.imageProduct}
               width="100%"
             />
           </div>
           <div className="col-md-7">
-            <h1>{Product.Name}</h1>
-            <p>{Product.Name}</p>
-            <strong>{Product.Price}</strong>
+            <h1>{Product.name}</h1>
+            <p>{Product.name}</p>
+            <strong>{Product.price}</strong>
             <br />
             <button onClick={this.AddToCartHandler.bind(this)} className="mt-5 btn btn-primary btn-lg">Add To Cart</button>
           </div>
@@ -88,7 +88,7 @@ export class Details extends React.Component {
             <div className="list-group">
               <CommentList comments={Comments} />
               <hr className="my-5" />
-              <CreateComment onComment={this.submitComment.bind(this)} data={Product.IdProduct} />
+              <CreateComment onComment={this.submitComment.bind(this)} data={Product.id} />
             </div>
           </div>
         </div>

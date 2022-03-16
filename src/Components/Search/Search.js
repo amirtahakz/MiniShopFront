@@ -7,7 +7,7 @@ export function Search(props) {
   const submitHandler = (event) => {
     event.target.reset();
     event.preventDefault();
-    history.push('/?Name='+ state);
+    history.push('/?name='+ state);
   };
 
   return (
