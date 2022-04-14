@@ -69,9 +69,15 @@ export class Details extends React.Component {
       <Fragment>
         <div className="row mt-5">
           <div className="col-md-5">
-            <img
+            {/* <img
               alt={Product.name}
               src={"https://localhost:44333/MyPictures/" + Product.imageProduct}
+              width="100%"
+            />
+          </div> */}
+          <img
+              alt={Product.name}
+              src="../Images/headphone.jpg"
               width="100%"
             />
           </div>

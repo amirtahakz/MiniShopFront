@@ -14,9 +14,9 @@ export function CartList({ ProductsCart }) {
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">ImageProduct</th>
           <th scope="col">Name</th>
           <th scope="col">Price</th>
-          <th scope="col">ImageProduct</th>
           <th scope="col">Quantity</th>
           <th scope="col">Changes</th>
         </tr>
@@ -26,14 +26,19 @@ export function CartList({ ProductsCart }) {
           <tr key={index}>
             <th scope="row">{index + 1}</th>
             <td>
-              <img
+              {/* <img
                 width="50"
                 src={"https://localhost:44333/MyPictures/" + item.ImageProduct}
                 alt={item.Name}
+              /> */}
+              <img
+                width="50"
+                src="../Images/headphone.jpg"
+                alt={item.Name}
               />
             </td>
-            <th>{item.Name}</th>
-            <td>{item.Price}</td>
+            <th>{item.name}</th>
+            <td>{item.price}</td>
             <td>{item.Quantity}</td>
             <td>
               <button onClick={()=> RemoveHandler(item)} className="btn btn-danger">Remove</button>
